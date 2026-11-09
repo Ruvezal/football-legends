@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Football Legends</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/game.css?v=51" />
+  </head>
+  <body>
+    <main class="cabinet">
+      <h1>Football Legends</h1>
+      <p class="status" id="status" aria-live="polite">Good luck</p>
+
+      <div class="frame" id="frame">
+        <div class="felt" id="reels"></div>
+        <svg id="paylines" aria-hidden="true"></svg>
+        <div class="shower" id="shower" hidden aria-hidden="true"></div>
+      </div>
+
+      <section class="console" aria-label="Machine controls">
+        <div class="meters">
+          <div class="meter">
+            <span>Wallet</span>
+            <strong id="credit">ETB 0.00</strong>
+          </div>
+          <div class="meter" id="win-meter">
+            <span>WON</span>
+            <strong id="win">ETB 0.00</strong>
+          </div>
+        </div>
+        <div class="bet-bar">
+          <button type="button" id="bet-down" aria-label="Lower bet">−</button>
+          <strong id="bet">20</strong>
+          <button type="button" id="bet-up" aria-label="Raise bet">+</button>
+        </div>
+        <div class="actions">
+          <button type="button" id="spin" class="play">Play</button>
+          <button type="button" id="autoplay" class="play play-auto" aria-pressed="false">Autoplay</button>
+        </div>
+        <div class="tools">
+          <button type="button" id="paytable" class="text">Paytable</button>
+          <button type="button" id="mute" class="text" aria-pressed="false">Sound on</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="modal" hidden>
+      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="pay-title">
+        <header class="sheet-head">
+          <h2 id="pay-title">Paytable</h2>
+          <button type="button" id="close-pay" class="text">Close</button>
+        </header>
+        <p class="sheet-note">
+          Four reels show four portraits each. Eighteen legends are mixed through the strips
+          with Zidane as wild and Čech as scatter.
+          Match 3 or 4 from the left reel. Zidane stands in for any legend, and turns red when
+          that line hits. Čech pays anywhere, and turns into Scatter when that hit lands, as a
+          multiple of the total bet. Line prizes are multiples of the line bet (total bet ÷ 20).
+        </p>
+        <div id="pay-body"></div>
+      </div>
+    </div>
+
+    <div class="banner" id="banner" hidden>
+      <div class="banner-card">
+        <p id="banner-kicker">Big win</p>
+        <p id="banner-amount">0</p>
+      </div>
+    </div>
+
+    <script type="module" src="js/game.js?v=71"></script>
+  </body>
+</html>

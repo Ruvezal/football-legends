@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: football-legends
+    runtime: static
+    buildCommand: echo "static site"
+    staticPublishPath: .
